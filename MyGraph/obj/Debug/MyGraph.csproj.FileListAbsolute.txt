@@ -1,0 +1,2 @@
+C:\Users\sidad\Desktop\Graph\MyGraph\obj\Debug\MyGraph.csprojResolveAssemblyReference.cache
+C:\Users\sidad\Desktop\Graph\MyGraph\obj\Debug\MyGraph.csproj.CoreCompileInputs.cache
