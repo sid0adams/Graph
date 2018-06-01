@@ -143,8 +143,8 @@
             this.CPP_A_Btn,
             this.CPP_B_BTN});
             this.задачаКитайскогоПочтальёнаToolStripMenuItem.Name = "задачаКитайскогоПочтальёнаToolStripMenuItem";
-            this.задачаКитайскогоПочтальёнаToolStripMenuItem.Size = new System.Drawing.Size(187, 20);
-            this.задачаКитайскогоПочтальёнаToolStripMenuItem.Text = "задача китайского почтальёна";
+            this.задачаКитайскогоПочтальёнаToolStripMenuItem.Size = new System.Drawing.Size(188, 20);
+            this.задачаКитайскогоПочтальёнаToolStripMenuItem.Text = "задача китайского почтальона";
             // 
             // CPP_A_Btn
             // 
