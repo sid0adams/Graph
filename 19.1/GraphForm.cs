@@ -63,7 +63,7 @@ namespace _19._1
                     if(SelectedNode.Head == draw.graph)
                     {
                         Node<NP<int>> T = draw.GetNode(e.Location);
-                        if (T != SelectedNode)
+                        if (T != SelectedNode&& T!= null && T.GetEdge(SelectedNode)== null)
                         {
                             GetValue get = new GetValue();
                             if (get.ShowDialog() == DialogResult.OK)
@@ -212,6 +212,24 @@ namespace _19._1
                     MessageBox.Show("error");
                 }
             }
+        }
+
+        private void CPP_Btn_Click(object sender, EventArgs e)
+        {
+            Graph<NP<int>> graph = sender == CPP_A_Btn ? DrawA.graph : DrawB.graph;
+            List<Node<NP<int>>> nodes = graph.ChinePostmanProblem();
+            if(nodes== null)
+            {
+                MessageBox.Show("невозможно");
+                return;
+            }
+            StringBuilder sb = new StringBuilder();
+            foreach (Node<NP<int>> item in nodes)
+            {
+                sb.Append(item.Value.V);
+                sb.Append(" ");
+            }
+            MessageBox.Show(sb.ToString());
         }
 
         private void GraphForm_Load(object sender, EventArgs e)

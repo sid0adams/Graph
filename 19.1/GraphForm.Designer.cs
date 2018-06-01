@@ -38,6 +38,9 @@
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveA = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveB = new System.Windows.Forms.ToolStripMenuItem();
+            this.задачаКитайскогоПочтальёнаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CPP_A_Btn = new System.Windows.Forms.ToolStripMenuItem();
+            this.CPP_B_BTN = new System.Windows.Forms.ToolStripMenuItem();
             this.OutputB = new System.Windows.Forms.PictureBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
@@ -70,7 +73,8 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem});
+            this.файлToolStripMenuItem,
+            this.задачаКитайскогоПочтальёнаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -93,7 +97,7 @@
             this.OpenA,
             this.OpenB});
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.открытьToolStripMenuItem.Text = "открыть ";
             // 
             // OpenA
@@ -116,22 +120,45 @@
             this.SaveA,
             this.SaveB});
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.сохранитьToolStripMenuItem.Text = "сохранить";
             // 
             // SaveA
             // 
             this.SaveA.Name = "SaveA";
-            this.SaveA.Size = new System.Drawing.Size(180, 22);
+            this.SaveA.Size = new System.Drawing.Size(82, 22);
             this.SaveA.Text = "A";
             this.SaveA.Click += new System.EventHandler(this.Save_Click);
             // 
             // SaveB
             // 
             this.SaveB.Name = "SaveB";
-            this.SaveB.Size = new System.Drawing.Size(180, 22);
+            this.SaveB.Size = new System.Drawing.Size(82, 22);
             this.SaveB.Text = "B";
             this.SaveB.Click += new System.EventHandler(this.Save_Click);
+            // 
+            // задачаКитайскогоПочтальёнаToolStripMenuItem
+            // 
+            this.задачаКитайскогоПочтальёнаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CPP_A_Btn,
+            this.CPP_B_BTN});
+            this.задачаКитайскогоПочтальёнаToolStripMenuItem.Name = "задачаКитайскогоПочтальёнаToolStripMenuItem";
+            this.задачаКитайскогоПочтальёнаToolStripMenuItem.Size = new System.Drawing.Size(187, 20);
+            this.задачаКитайскогоПочтальёнаToolStripMenuItem.Text = "задача китайского почтальёна";
+            // 
+            // CPP_A_Btn
+            // 
+            this.CPP_A_Btn.Name = "CPP_A_Btn";
+            this.CPP_A_Btn.Size = new System.Drawing.Size(180, 22);
+            this.CPP_A_Btn.Text = "A";
+            this.CPP_A_Btn.Click += new System.EventHandler(this.CPP_Btn_Click);
+            // 
+            // CPP_B_BTN
+            // 
+            this.CPP_B_BTN.Name = "CPP_B_BTN";
+            this.CPP_B_BTN.Size = new System.Drawing.Size(180, 22);
+            this.CPP_B_BTN.Text = "B";
+            this.CPP_B_BTN.Click += new System.EventHandler(this.CPP_Btn_Click);
             // 
             // OutputB
             // 
@@ -258,6 +285,9 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem changeContextBtn;
         private System.Windows.Forms.ToolStripMenuItem RemoveBtn;
+        private System.Windows.Forms.ToolStripMenuItem задачаКитайскогоПочтальёнаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CPP_A_Btn;
+        private System.Windows.Forms.ToolStripMenuItem CPP_B_BTN;
     }
 }
 

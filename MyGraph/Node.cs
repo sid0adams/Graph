@@ -10,6 +10,7 @@ namespace MyGraph
     {
         public Graph<T> Head { get; }
         internal List<Edge<T>> edges;
+        internal int LastCount;
         public int GetEdgesCount => edges.Count;
         public Edge<T> GetEdge(int index) => edges[index];
         public Edge<T> GetEdge(Node<T> node)
@@ -67,5 +68,9 @@ namespace MyGraph
                 Head.Nodes[i].RemoveEdgeTo(this);
             edges.Clear();
         }
+
+
+        internal int Dist = -1;
+        internal Node<T> Last = null;
     }
 }

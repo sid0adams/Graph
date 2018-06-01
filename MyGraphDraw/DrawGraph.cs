@@ -93,8 +93,8 @@ namespace MyGraphDraw
                     double AB = Math.Sqrt(Math.Pow(edge.First.Value.P.X - edge.Second.Value.P.X, 2) + Math.Pow(edge.First.Value.P.Y - edge.Second.Value.P.Y, 2));
                     double AC = Math.Sqrt(Math.Pow(edge.First.Value.P.X - p.X, 2) + Math.Pow(edge.First.Value.P.Y - p.Y, 2));
                     double CB = Math.Sqrt(Math.Pow(p.X - edge.Second.Value.P.X, 2) + Math.Pow(p.Y - edge.Second.Value.P.Y, 2));
-                    double Gr = AC + CB - AC;
-                    if (Gr < 40)
+                    double Gr = AC + CB - AB;
+                    if (Gr < 1)
                     {
                         return edge;
                     }
