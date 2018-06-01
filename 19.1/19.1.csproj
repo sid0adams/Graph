@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GetValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetValue.Designer.cs">
+      <DependentUpon>GetValue.cs</DependentUpon>
+    </Compile>
     <Compile Include="GraphForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -53,6 +59,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GetValue.resx">
+      <DependentUpon>GetValue.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GraphForm.resx">
       <DependentUpon>GraphForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -79,6 +88,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FileWork\FileWork.csproj">
+      <Project>{5f9ff578-4200-4ba8-a644-8640804279aa}</Project>
+      <Name>FileWork</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyGraphDraw\MyGraphDraw.csproj">
       <Project>{e6fbc9e6-1698-4a3a-8377-334c5e6c8543}</Project>
       <Name>MyGraphDraw</Name>

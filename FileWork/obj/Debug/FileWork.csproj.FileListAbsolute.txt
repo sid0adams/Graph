@@ -1,0 +1,11 @@
+C:\Users\sidad\Desktop\Graph\FileWork\bin\Debug\FileWork.dll
+C:\Users\sidad\Desktop\Graph\FileWork\bin\Debug\FileWork.pdb
+C:\Users\sidad\Desktop\Graph\FileWork\bin\Debug\MyGraph.dll
+C:\Users\sidad\Desktop\Graph\FileWork\bin\Debug\MyGraphDraw.dll
+C:\Users\sidad\Desktop\Graph\FileWork\bin\Debug\MyGraphDraw.pdb
+C:\Users\sidad\Desktop\Graph\FileWork\bin\Debug\MyGraph.pdb
+C:\Users\sidad\Desktop\Graph\FileWork\obj\Debug\FileWork.csprojAssemblyReference.cache
+C:\Users\sidad\Desktop\Graph\FileWork\obj\Debug\FileWork.csproj.CoreCompileInputs.cache
+C:\Users\sidad\Desktop\Graph\FileWork\obj\Debug\FileWork.csproj.CopyComplete
+C:\Users\sidad\Desktop\Graph\FileWork\obj\Debug\FileWork.dll
+C:\Users\sidad\Desktop\Graph\FileWork\obj\Debug\FileWork.pdb

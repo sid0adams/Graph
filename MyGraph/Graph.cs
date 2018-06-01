@@ -63,5 +63,6 @@ namespace MyGraph
             return UnAvailable;
         }
         public int GetIndex(Node<T> node) => Nodes.IndexOf(node);
+        
     }
 }

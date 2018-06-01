@@ -8,23 +8,30 @@ using System.Drawing;
 
 namespace MyGraphDraw
 {
-    public struct NP<T>
+    public class NP<T>
     {
         public T V { get; set; }
         public Point P { get; set; }
         public int X => P.X;
         public int Y => P.Y;
-        public NP(T v, Point p) : this()
+        public NP(T v, Point p)
         {
             V = v;
             P = p;
+        }
+        public NP(T v, int X, int Y)
+        {
+            V = v;
+            P = new Point(X, Y);
         }
     }
     public class DrawGraph<T>
     {
         Bitmap Image;
         Graphics G;
-        Size size { get; set; }
+        public Size size { get;private set; }
+        public int Height => size.Height;
+        public int Width => size.Width;
         public Graph<NP<T>> graph { get; set; }
         public bool DrawEdgeValue { get; set; } = true;
         int R = 30;
@@ -83,9 +90,11 @@ namespace MyGraphDraw
                 for (int j = 0; j < graph[i].GetEdgesCount; j++)
                 {
                     Edge<NP<T>> edge = graph[i].GetEdge(j);
-                    if(Math.Abs(Math.Pow(edge.First.Value.P.X- edge.Second.Value.P.X,2) + Math.Pow(edge.First.Value.P.Y - edge.Second.Value.P.Y, 2)
-                        - Math.Pow(edge.First.Value.P.X - p.X, 2) - Math.Pow(edge.First.Value.P.Y - p.Y, 2)
-                        - Math.Pow(edge.Second.Value.P.X - p.X, 2) - Math.Pow(edge.Second.Value.P.Y - p.Y, 2)) < 40)
+                    double AB = Math.Sqrt(Math.Pow(edge.First.Value.P.X - edge.Second.Value.P.X, 2) + Math.Pow(edge.First.Value.P.Y - edge.Second.Value.P.Y, 2));
+                    double AC = Math.Sqrt(Math.Pow(edge.First.Value.P.X - p.X, 2) + Math.Pow(edge.First.Value.P.Y - p.Y, 2));
+                    double CB = Math.Sqrt(Math.Pow(p.X - edge.Second.Value.P.X, 2) + Math.Pow(p.Y - edge.Second.Value.P.Y, 2));
+                    double Gr = AC + CB - AC;
+                    if (Gr < 40)
                     {
                         return edge;
                     }
@@ -94,9 +103,23 @@ namespace MyGraphDraw
         }
         public bool PlaceFree(Point p)
         {
+            if (p.X < R || p.Y < R || p.X > Width - R || p.Y > Height - R)
+                return false;
             for (int i = 0; i < graph.Count; i++)
             {
                 if (Dist(graph[i].Value.P, p, 4*R))
+                    return false;
+            }
+            return true;
+        }
+
+        public bool PlaceChangeFree(Point p, Node<NP<T>> node)
+        {
+            if (p.X < R || p.Y < R || p.X > Width - R || p.Y > Height - R)
+                return false;
+            for (int i = 0; i < graph.Count; i++)
+            {
+                if (Dist(graph[i].Value.P, p, 4 * R) && graph[i]!= node)
                     return false;
             }
             return true;
@@ -105,6 +128,11 @@ namespace MyGraphDraw
         public DrawGraph(Size size)
         {
             this.size = size;
+            graph = new Graph<NP<T>>();
+        }
+        public DrawGraph(int width,int height)
+        {
+            size = new Size(width, height);
             graph = new Graph<NP<T>>();
         }
         public void Add(T value,Point p)

@@ -1,2 +1,6 @@
-C:\Users\sidad\Desktop\Graph\MyGraph\obj\Debug\MyGraph.csprojResolveAssemblyReference.cache
 C:\Users\sidad\Desktop\Graph\MyGraph\obj\Debug\MyGraph.csproj.CoreCompileInputs.cache
+C:\Users\sidad\Desktop\Graph\MyGraph\bin\Debug\MyGraph.dll
+C:\Users\sidad\Desktop\Graph\MyGraph\bin\Debug\MyGraph.pdb
+C:\Users\sidad\Desktop\Graph\MyGraph\obj\Debug\MyGraph.csprojAssemblyReference.cache
+C:\Users\sidad\Desktop\Graph\MyGraph\obj\Debug\MyGraph.dll
+C:\Users\sidad\Desktop\Graph\MyGraph\obj\Debug\MyGraph.pdb

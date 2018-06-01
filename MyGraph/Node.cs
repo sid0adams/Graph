@@ -8,10 +8,17 @@ namespace MyGraph
 {
     public class Node<T>
     {
-        internal Graph<T> Head { get; }
+        public Graph<T> Head { get; }
         internal List<Edge<T>> edges;
         public int GetEdgesCount => edges.Count;
         public Edge<T> GetEdge(int index) => edges[index];
+        public Edge<T> GetEdge(Node<T> node)
+        {
+            for (int i = 0; i < edges.Count; i++)
+                if (edges[i].Second == node)
+                    return edges[i];
+            return null;
+        }
         public bool EdgesContainsTo(Node<T> node)
         {
             for (int i = 0; i < edges.Count; i++)
@@ -21,19 +28,6 @@ namespace MyGraph
         }
         public T Value { get; set; }
         public bool Was { get; set; }
-        public void AddEdgeTo(Node<T> node, int value = 0)
-        {
-            if (Head != node.Head || this == node)
-                throw new ArgumentException();
-            edges.Add(new Edge<T>(this, node,null,value));
-        }
-        public void AddDualEdgeTo(Node<T> node, int value = 0)
-        {
-            if (Head != node.Head || this == node)
-                throw new ArgumentException();
-            edges.Add(new Edge<T>(this, node, null, value));
-            node.edges.Add(new Edge<T>(node, this, null, value));
-        }
         public void AddDualLinkedEdgeTo(Node<T> node, int value = 0)
         {
             if (Head != node.Head || this == node)
@@ -48,13 +42,13 @@ namespace MyGraph
         {
             Head = head;
             Value = value;
+            edges = new List<Edge<T>>();
         }
         public bool RemoveEdge(Edge<T> edge)
         {
-            if(edges.Contains(edge))
+            if (edges.Contains(edge))
             {
-                if (edge.Linked)
-                    edge.Second.edges.Remove(edge.Copy);
+                edge.Second.edges.Remove(edge.Copy);
                 edges.Remove(edge);
                 return true;
             }

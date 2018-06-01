@@ -1,0 +1,9 @@
+C:\Users\sidad\Desktop\Graph\MyGraphDraw\bin\Debug\MyGraphDraw.dll
+C:\Users\sidad\Desktop\Graph\MyGraphDraw\bin\Debug\MyGraphDraw.pdb
+C:\Users\sidad\Desktop\Graph\MyGraphDraw\bin\Debug\MyGraph.dll
+C:\Users\sidad\Desktop\Graph\MyGraphDraw\bin\Debug\MyGraph.pdb
+C:\Users\sidad\Desktop\Graph\MyGraphDraw\obj\Debug\MyGraphDraw.csprojAssemblyReference.cache
+C:\Users\sidad\Desktop\Graph\MyGraphDraw\obj\Debug\MyGraphDraw.csproj.CoreCompileInputs.cache
+C:\Users\sidad\Desktop\Graph\MyGraphDraw\obj\Debug\MyGraphDraw.csproj.CopyComplete
+C:\Users\sidad\Desktop\Graph\MyGraphDraw\obj\Debug\MyGraphDraw.dll
+C:\Users\sidad\Desktop\Graph\MyGraphDraw\obj\Debug\MyGraphDraw.pdb
