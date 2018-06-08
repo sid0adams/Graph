@@ -241,5 +241,77 @@ namespace MyGraph
             return Answer;
         }
         #endregion
+        #region Isomorf
+        public List<int> GetIsomorfPair(Graph<T> secondGraph)
+        {
+            if (Nodes.Count != secondGraph.Nodes.Count)
+                return null;
+            Nodes.Sort();
+            secondGraph.Nodes.Sort();
+            blocks = new List<List<int>>();
+            List<int> temp = new List<int>() { 0 };
+            int last = Nodes[0].edges.Count;
+            for (int i = 1; i < Nodes.Count; i++)
+            {
+                if (Nodes[i].edges.Count != secondGraph.Nodes[i].edges.Count)
+                    return null;
+                if(Nodes[i].edges.Count!=last)
+                {
+                    blocks.Add(temp);
+                    temp = new List<int>();
+                    last = Nodes[i].edges.Count;
+                }
+                temp.Add(i);
+            }
+            if (temp.Count > 1)
+                blocks.Add(temp);
+            second = secondGraph.Nodes;
+            selcted = new List<Node<T>>();
+            List<Node<T>> nodes = IsomorfSearch(0, 0);
+            if (nodes == null)
+                return null;
+            List<int> isomorf = new List<int>();
+            foreach (var item in nodes)
+            {
+                isomorf.Add(Nodes.IndexOf(item));
+            }
+            return isomorf;
+        }
+        List<List<int>> blocks;
+        List<Node<T>> second;
+        List<Node<T>> selcted;
+        private List<Node<T>> IsomorfSearch(int Block, int index)
+        {
+            if(selcted.Count == Nodes.Count)
+            {
+                for (int i = 0; i < selcted.Count; i++)
+                {
+                    for (int j = 0; j < selcted[i].edges.Count; j++)
+                    {
+                        if (!second[i].EdgesContainsTo(second[selcted.IndexOf(selcted[i].edges[j].Second)]))
+                            return null;
+                    }
+                }
+                return new List<Node<T>>(selcted);
+            }
+            if(index == blocks[Block].Count)
+            {
+                Block++;
+                index = 0;
+            }
+            for (int i = 0; i < blocks[Block].Count; i++)
+            {
+                if(!selcted.Contains(Nodes[blocks[Block][i]]))
+                {
+                    selcted.Add(Nodes[blocks[Block][i]]);
+                    List<Node<T>> ans = IsomorfSearch(Block, index + 1);
+                    if (ans != null)
+                        return ans;
+                    selcted.Remove(Nodes[blocks[Block][i]]);
+                }
+            }
+            return null;
+        }
+        #endregion
     }
 }

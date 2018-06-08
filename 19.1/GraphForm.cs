@@ -139,6 +139,7 @@ namespace _19._1
                 UpdatePicter(draw == DrawA ? OutputA : OutputB);
             }
             menuwork = false;
+            SelectedNode = null;
         }
 
         private void ChangeContextBtn_Click(object sender, EventArgs e)
@@ -166,6 +167,7 @@ namespace _19._1
                 UpdatePicter(draw == DrawA ? OutputA : OutputB);
             }
             menuwork = false;
+            SelectedNode = null;
         }
 
         private void Open_Click(object sender, EventArgs e)
@@ -177,11 +179,13 @@ namespace _19._1
                     if(sender == OpenA)
                     {
                         DrawA = FileGraph.OpenGraph(openFileDialog.FileName);
+                        DrawA.DrawEdgeValue = EdgeParam.Checked;
                         UpdatePicter(OutputA);
                     }
                     else
                     {
                         DrawB = FileGraph.OpenGraph(openFileDialog.FileName);
+                        DrawB.DrawEdgeValue = EdgeParam.Checked;
                         UpdatePicter(OutputB);
                     }
                 }
@@ -230,6 +234,30 @@ namespace _19._1
                 sb.Append(" ");
             }
             MessageBox.Show(sb.ToString());
+        }
+        
+        private void IsomorfBtn_Click(object sender, EventArgs e)
+        {
+            List<int> isom = DrawA.graph.GetIsomorfPair(DrawB.graph);
+            if (isom == null)
+            {
+                MessageBox.Show("не изоморфны");
+                return;
+            }
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < isom.Count; i++)
+            {
+                sb.AppendLine(DrawA.graph[isom[i]].Value.V.ToString() + " " + DrawB.graph[i].Value.V.ToString());
+            }
+            MessageBox.Show(sb.ToString());
+        }
+
+        private void EdgeParam_CheckedChanged(object sender, EventArgs e)
+        {
+            DrawA.DrawEdgeValue = EdgeParam.Checked;
+            DrawB.DrawEdgeValue = EdgeParam.Checked;
+            UpdatePicter(OutputA);
+            UpdatePicter(OutputB);
         }
 
         private void GraphForm_Load(object sender, EventArgs e)

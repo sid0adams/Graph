@@ -59,6 +59,7 @@ namespace MyGraphDraw
             for (int i = 0; i < graph.Count; i++)
             {
                 G.FillEllipse(Brushes.Red, graph[i].Value.P.X - R, graph[i].Value.P.Y - R, 2 * R, 2 * R);
+
                 float size = 0;
                 string print = graph[i].Value.V.ToString();
                 do

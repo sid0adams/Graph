@@ -50,6 +50,8 @@
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.changeContextBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.RemoveBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.IsomorfBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.EdgeParam = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.OutputA)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OutputB)).BeginInit();
@@ -74,7 +76,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
-            this.задачаКитайскогоПочтальёнаToolStripMenuItem});
+            this.задачаКитайскогоПочтальёнаToolStripMenuItem,
+            this.IsomorfBtn});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -149,14 +152,14 @@
             // CPP_A_Btn
             // 
             this.CPP_A_Btn.Name = "CPP_A_Btn";
-            this.CPP_A_Btn.Size = new System.Drawing.Size(180, 22);
+            this.CPP_A_Btn.Size = new System.Drawing.Size(82, 22);
             this.CPP_A_Btn.Text = "A";
             this.CPP_A_Btn.Click += new System.EventHandler(this.CPP_Btn_Click);
             // 
             // CPP_B_BTN
             // 
             this.CPP_B_BTN.Name = "CPP_B_BTN";
-            this.CPP_B_BTN.Size = new System.Drawing.Size(180, 22);
+            this.CPP_B_BTN.Size = new System.Drawing.Size(82, 22);
             this.CPP_B_BTN.Text = "B";
             this.CPP_B_BTN.Click += new System.EventHandler(this.CPP_Btn_Click);
             // 
@@ -239,11 +242,32 @@
             this.RemoveBtn.Text = "удалить";
             this.RemoveBtn.Click += new System.EventHandler(this.Remove);
             // 
+            // IsomorfBtn
+            // 
+            this.IsomorfBtn.Name = "IsomorfBtn";
+            this.IsomorfBtn.Size = new System.Drawing.Size(101, 20);
+            this.IsomorfBtn.Text = "изоморфность";
+            this.IsomorfBtn.Click += new System.EventHandler(this.IsomorfBtn_Click);
+            // 
+            // EdgeParam
+            // 
+            this.EdgeParam.AutoSize = true;
+            this.EdgeParam.Checked = true;
+            this.EdgeParam.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.EdgeParam.Location = new System.Drawing.Point(307, 48);
+            this.EdgeParam.Name = "EdgeParam";
+            this.EdgeParam.Size = new System.Drawing.Size(127, 17);
+            this.EdgeParam.TabIndex = 9;
+            this.EdgeParam.Text = "показать вес рёбер";
+            this.EdgeParam.UseVisualStyleBackColor = true;
+            this.EdgeParam.CheckedChanged += new System.EventHandler(this.EdgeParam_CheckedChanged);
+            // 
             // GraphForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1408, 624);
+            this.Controls.Add(this.EdgeParam);
             this.Controls.Add(this.AddEdge);
             this.Controls.Add(this.AddBtn);
             this.Controls.Add(this.ChangeBtn);
@@ -288,6 +312,8 @@
         private System.Windows.Forms.ToolStripMenuItem задачаКитайскогоПочтальёнаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CPP_A_Btn;
         private System.Windows.Forms.ToolStripMenuItem CPP_B_BTN;
+        private System.Windows.Forms.ToolStripMenuItem IsomorfBtn;
+        private System.Windows.Forms.CheckBox EdgeParam;
     }
 }
 

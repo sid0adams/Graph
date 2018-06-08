@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyGraph
 {
-    public class Node<T>
+    public class Node<T>:IComparable
     {
         public Graph<T> Head { get; }
         internal List<Edge<T>> edges;
@@ -69,6 +69,10 @@ namespace MyGraph
             edges.Clear();
         }
 
+        public int CompareTo(object obj)
+        {
+            return edges.Count.CompareTo(((Node<T>)obj).edges.Count);
+        }
 
         internal int Dist = -1;
         internal Node<T> Last = null;
